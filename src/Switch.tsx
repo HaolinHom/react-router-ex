@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useLocation, matchPath } from 'react-router-dom';
 import { SwitchProps, SwitchChild } from './types';
-import clone from 'lodash.clone';
+import clone from 'lodash-es/clone';
 
 const Switch = (props: SwitchProps) => {
   const { children, onChange } = props;
