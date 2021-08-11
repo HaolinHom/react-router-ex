@@ -50,7 +50,7 @@ export interface Context {
   setMounted: (mounted: Mounted) => void;
   getMount: (path?: string) => boolean;
   doMount: (path: string | string[]) => void;
-  doUnMount: (path: string | string[]) => void;
+  doUnmount: (path: string | string[]) => void;
 }
 
 export interface RedirectExProps {

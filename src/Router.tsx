@@ -35,7 +35,7 @@ const Router = (props) => {
     updateMount(path, true);
   };
 
-  const doUnMount = (path: string | string[]) => {
+  const doUnmount = (path: string | string[]) => {
     updateMount(path, false);
   };
 
@@ -44,7 +44,7 @@ const Router = (props) => {
     setMounted,
     getMount,
     doMount,
-    doUnMount,
+    doUnmount,
   } as Context;
 
   return (

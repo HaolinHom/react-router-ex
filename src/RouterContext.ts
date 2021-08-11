@@ -6,7 +6,7 @@ const context = React.createContext<Context>({
   setMounted: () => undefined,
   getMount: () => false,
   doMount: () => undefined,
-  doUnMount: () => undefined,
+  doUnmount: () => undefined,
 });
 
 context.displayName = 'RouterEx';
