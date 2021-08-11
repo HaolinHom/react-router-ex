@@ -47,7 +47,7 @@ export interface RouteProps extends RoutePropsInterface {
 
 export interface Context {
   getAllMounted: () => Mounted;
-  getMounted: (path: string[] | string | undefined) => boolean;
+  getMounted: (path: string) => boolean;
   setMounted: (path: string) => void;
   setUnMounted: (path: string | string[]) => void;
 }
