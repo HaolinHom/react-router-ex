@@ -43,10 +43,8 @@ const Route = (props: RouteProps) => {
         // @ts-ignore
         return render(newProps);
       }
-    } else {
-      // @ts-ignore
-      return typeof children === 'function' ? children(newProps) : children;
     }
+    return null;
   };
 
   useEffect(() => {
