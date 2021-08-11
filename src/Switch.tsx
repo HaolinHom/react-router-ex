@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { useLocation, matchPath } from 'react-router-dom';
 import { SwitchProps, SwitchChild } from './types';
 import clone from 'lodash-es/clone';
@@ -8,15 +8,7 @@ const Switch = (props: SwitchProps) => {
 
   const location = useLocation();
 
-  const emitChangeRef = useRef(typeof onChange === 'function');
   let isMatch = false;
-  let params;
-
-  useEffect(() => {
-    if (params && typeof onChange === 'function') {
-      onChange(params);
-    }
-  }, [onChange, params]);
 
   return (
     <>
@@ -32,12 +24,11 @@ const Switch = (props: SwitchProps) => {
             if (match) {
               isMatch = true;
               visible = true;
-              if (emitChangeRef.current && match.path !== '*') {
-                params = clone(location);
+              if (typeof onChange === 'function' && match.path !== '*') {
+                onChange(clone(location));
               }
             }
           }
-
           return (
             <div
               id={child.props.path}
