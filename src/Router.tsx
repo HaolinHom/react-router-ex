@@ -7,43 +7,44 @@ const Router = (props) => {
 
   const [mounted, setMounted] = useState<Mounted>({});
 
-  const _getAllMounted = (): Mounted => {
-    return mounted;
-  };
-
-  const _getMounted = (path: string): boolean => {
+  const getMount = (path?: string): boolean => {
+    if (!path) {
+      return false;
+    }
     return mounted[path];
   };
 
-  const _setMounted = (path: string) => {
-    setMounted({
-      ...mounted,
-      [path]: true,
-    });
-  };
-
-  const _setUnMounted = (path: string | string[]) => {
+  const updateMount = (path: string | string[], mount: boolean) => {
     if (typeof path === 'string') {
       setMounted({
         ...mounted,
-        [path]: false,
+        [path]: mount,
       });
     } else if (Array.isArray(path)) {
       setMounted({
         ...mounted,
         ...path.reduce((accumulate, current) => {
-          accumulate[current] = false;
+          accumulate[current] = mount;
           return accumulate;
         }, {}),
       });
     }
   };
 
+  const doMount = (path: string | string[]) => {
+    updateMount(path, true);
+  };
+
+  const doUnMount = (path: string | string[]) => {
+    updateMount(path, false);
+  };
+
   const provider = {
-    getAllMounted: _getAllMounted,
-    getMounted: _getMounted,
-    setMounted: _setMounted,
-    setUnMounted: _setUnMounted,
+    mounted,
+    setMounted,
+    getMount,
+    doMount,
+    doUnMount,
   } as Context;
 
   return (

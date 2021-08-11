@@ -2,10 +2,11 @@ import React from 'react';
 import { Context } from './types';
 
 const context = React.createContext<Context>({
-  getAllMounted: () => ({}),
-  getMounted: (path) => false,
-  setMounted: (path) => undefined,
-  setUnMounted: (path) => undefined,
+  mounted: {},
+  setMounted: () => undefined,
+  getMount: () => false,
+  doMount: () => undefined,
+  doUnMount: () => undefined,
 });
 
 context.displayName = 'RouterEx';

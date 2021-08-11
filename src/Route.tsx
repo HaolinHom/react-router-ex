@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory, matchPath } from 'react-router-dom';
-import RouterContext from './RouterContext';
 import { ComputedMatch, RouteProps } from './types';
+import useRouteMount from './useRouteMount';
 
 function isEmptyChildren(children) {
   return React.Children.count(children) === 0;
@@ -12,8 +12,8 @@ const Route = (props: RouteProps) => {
 
   const history = useHistory();
 
-  const { getMounted, setMounted } = useContext(RouterContext);
-  const mount = getMounted(path);
+  const { getMount, doMount } = useRouteMount();
+  const mount = getMount(path);
 
   let match = null as ComputedMatch;
   if (computedMatch) {
@@ -49,9 +49,9 @@ const Route = (props: RouteProps) => {
 
   useEffect(() => {
     if (!mount && match && path) {
-      setMounted(path);
+      doMount(path);
     }
-  }, [mount, match, setMounted, path]);
+  }, [mount, match, doMount, path]);
 
   return <>{renderMatch(mount)}</>;
 };

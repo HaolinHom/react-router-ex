@@ -46,10 +46,11 @@ export interface RouteProps extends RoutePropsInterface {
 }
 
 export interface Context {
-  getAllMounted: () => Mounted;
-  getMounted: (path: string) => boolean;
-  setMounted: (path: string) => void;
-  setUnMounted: (path: string | string[]) => void;
+  mounted: Mounted,
+  setMounted: (mounted: Mounted) => void;
+  getMount: (path?: string) => boolean;
+  doMount: (path: string | string[]) => void;
+  doUnMount: (path: string | string[]) => void;
 }
 
 export interface RedirectExProps {
