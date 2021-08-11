@@ -1,26 +1,21 @@
 import React, { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
+import { RedirectExProps } from './types';
 
-const Redirect = (props: {
-  route: {
-    path: string;
-    redirect: string;
-  };
-  children?: React.ReactNode;
-}) => {
-  const { route, children } = props;
+const Redirect = (props: RedirectExProps) => {
+  const { redirect, path, children } = props;
 
   const location = useLocation();
   const history = useHistory();
 
   useEffect(() => {
-    if (!route.redirect) {
+    if (!redirect) {
       return;
     }
-    if (location.pathname === route.path) {
-      history.push(route.redirect);
+    if (location.pathname === path) {
+      history.push(redirect);
     }
-  }, [location.pathname, route, history]);
+  }, [location.pathname, redirect, path, history]);
 
   return <>{children}</>;
 };

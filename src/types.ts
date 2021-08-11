@@ -2,6 +2,7 @@ import {
   RedirectProps,
   RouteProps as RoutePropsInterface,
 } from 'react-router-dom';
+import React from 'react';
 
 export type Mounted = {
   [path: string]: boolean;
@@ -49,4 +50,10 @@ export interface Context {
   getMounted: (path: string[] | string | undefined) => boolean;
   setMounted: (path: string) => void;
   setUnMounted: (path: string | string[]) => void;
+}
+
+export interface RedirectExProps {
+  redirect: string;
+  path: string;
+  children?: React.ReactNode;
 }
