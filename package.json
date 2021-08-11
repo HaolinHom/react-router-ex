@@ -1,7 +1,7 @@
 {
   "name": "react-router-ex",
   "version": "1.0.0",
-  "description": "react-router-dom extension",
+  "description": "A react-router-dom extension, provide keep alive route function.",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -16,7 +16,9 @@
     "react-router",
     "react-router-dom",
     "react-router-ex",
-    "react-router-extension"
+    "react-router-extension",
+    "keep-alive",
+    "keep-alive-router"
   ],
   "author": "Haolin",
   "license": "MIT",
