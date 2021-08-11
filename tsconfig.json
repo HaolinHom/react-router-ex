@@ -22,11 +22,6 @@
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
     "newLine": "lf"
   },
   "include": [
