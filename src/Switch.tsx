@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation, matchPath } from 'react-router-dom';
 import { SwitchProps, SwitchChild } from './types';
-import clone from 'lodash-es/clone';
 
 const Switch = (props: SwitchProps) => {
   const { children, onChange } = props;
@@ -25,7 +24,7 @@ const Switch = (props: SwitchProps) => {
               isMatch = true;
               visible = true;
               if (typeof onChange === 'function' && match.path !== '*') {
-                onChange(clone(location));
+                onChange(location);
               }
             }
           }

@@ -26,9 +26,6 @@
     "url": "https://github.com/HaolinHom/react-router-ex/issues"
   },
   "homepage": "https://github.com/HaolinHom/react-router-ex#readme",
-  "dependencies": {
-    "lodash-es": "^4.17.21"
-  },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
