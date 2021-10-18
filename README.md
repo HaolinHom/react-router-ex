@@ -5,21 +5,11 @@ it provides keep alive route after the route component mounted.
 
 ## Install
 
-pnpm
-
 ```shell
 pnpm add react-router-ex
-```
-
-npm
-
-```shell
+# or
 npm i react-router-ex
-```
-
-yarn
-
-```shell
+# or
 yarn add react-router-ex
 ```
 
