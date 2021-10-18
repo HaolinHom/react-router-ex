@@ -1,6 +1,6 @@
 {
   "name": "react-router-ex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A react-router-dom extension, provide keep alive route function.",
   "main": "lib/index.js",
   "module": "lib/index.js",
